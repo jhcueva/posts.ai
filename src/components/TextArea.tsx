@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/preact'
 import { checkIsEnglish } from '../services/cohere.js'
-import { isEnglish } from '../state.js'
+import { isEnglish } from './store.js'
 
 function TextArea() {
   const $isEnglish = useStore(isEnglish)
@@ -10,8 +10,6 @@ function TextArea() {
     const isValid = value.length > 0
     const language = await checkIsEnglish(value)
     isEnglish.set(language)
-    console.log("Language: ", language)
-    console.log("isEnglish", isEnglish.value)
   }
 
   return (

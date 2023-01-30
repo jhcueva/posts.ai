@@ -3,14 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import TextArea from '../components/TextArea'
 import ErrorMessage from '../components/ErrorMessage';
 import SubmitButton from '../components/ButtonSubmit';
+import Header from '../components/Header';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="container max-w-lg m-auto">
-		<h1 class="font-semibold text-4xl text-center my-6">Welcome to <span class="text-gradient">Hackathon</span> 🤖</h1>
-
-    <ErrorMessage client:load/>
-    <TextArea client:visible/>
-    <SubmitButton client:visible/>
+	<main class="min-h-screen dark:bg-slate-800">
+    <section class="container max-w-lg m-auto">
+      <Header/>
+      <h1 class="font-semibold text-4xl text-center dark:text-white my-6">Welcome to <span class="text-gradient">Hackathon</span> 🤖</h1>
+  
+      <ErrorMessage client:load/>
+      <TextArea client:visible/>
+      <SubmitButton client:visible/>
+    </section>
 	</main>
 </Layout>

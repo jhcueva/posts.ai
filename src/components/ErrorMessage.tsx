@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/preact"
-import { isEnglish } from "../state"
+import { isEnglish } from "./store"
 
 function ErrorMessage() {
   const $isEnglish = useStore(isEnglish)
