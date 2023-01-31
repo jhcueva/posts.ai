@@ -11,12 +11,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^2.0.0",
+    "@astrojs/preact": "^0.2.0",
     "@astrojs/tailwind": "^3.0.0",
     "@nanostores/preact": "^0.3.1",
     "astro": "^2.0.1",
     "nanostores": "^0.7.1",
     "preact": "^10.11.3",
     "tailwindcss": "^3.2.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.3",
+    "prettier-plugin-tailwindcss": "^0.2.2"
   }
 }
