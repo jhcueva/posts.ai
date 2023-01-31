@@ -4,19 +4,27 @@ import TextArea from "../components/TextArea";
 import ErrorMessage from "../components/ErrorMessage";
 import SubmitButton from "../components/ButtonSubmit";
 import Header from "../components/Header";
+import TwitterCard from "../components/Twitter";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="min-h-screen dark:bg-slate-800">
-    <section class="container m-auto max-w-lg">
+  <main class="min-h-screen dark:bg-slate-900">
+    <section class="container m-auto max-w-4xl">
       <Header />
-      <h1 class="my-6 text-center text-4xl font-semibold dark:text-white">
-        Welcome to <span class="text-gradient">Hackathon</span> 🤖
+      <h1 class="my-6 text-center text-5xl font-semibold dark:text-white">
+        Say ‘goodbye’ to the blank page for good
       </h1>
 
-      <ErrorMessage client:load />
-      <TextArea client:visible />
-      <SubmitButton client:visible />
+      <section class="grid grid-cols-12">
+        <section class="col-span-12 lg:col-span-6">
+          <ErrorMessage client:load />
+          <TextArea client:visible />
+          <SubmitButton client:visible />
+        </section>
+        <section class="col-span-12 lg:col-span-6">
+          <TwitterCard client:visible/>
+        </section>
+      </section>
     </section>
   </main>
 </Layout>

@@ -61,3 +61,29 @@ Correct sample:`,
   const { text } = response.generations[0];
   return text.replace("--", "").replaceAll('"', "").trim();
 }
+
+export async function createBodyParagraph(input) {
+  const data = {
+    model: "command-xlarge-20221108",
+    prompt: input,
+    max_tokens: 200,
+    temperature: 0.9,
+    k: 0,
+    p: 1,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+    stop_sequences: ["--"],
+    return_likelihoods: "NONE",
+  }
+
+  const response = await fetch(COHERE_API_GENERATE_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `BEARER ${COHERE_API_KEY}`,
+      "Content-Type": "application/json",
+      "Cohere-Version": "2022-12-06",
+    },
+    body: JSON.stringify(data)
+  }).then((res) => res.json())
+  console.log("Response body paragraph: ",response.generations[0].text)
+}
