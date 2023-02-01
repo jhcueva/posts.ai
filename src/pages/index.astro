@@ -4,7 +4,8 @@ import TextArea from "../components/TextArea";
 import ErrorMessage from "../components/ErrorMessage";
 import SubmitButton from "../components/ButtonSubmit";
 import Header from "../components/Header";
-import TwitterCard from "../components/Twitter";
+import SocialNetworkSelector from "../components/SocialNetworkSelector";
+import SocialNetworkCard from "../components/SocialNetworkCard";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -22,7 +23,9 @@ import TwitterCard from "../components/Twitter";
           <SubmitButton client:visible />
         </section>
         <section class="col-span-12 lg:col-span-6">
-          <TwitterCard client:visible />
+          <!-- <TwitterCard client:visible /> -->
+          <SocialNetworkCard client:visible />
+          <SocialNetworkSelector client:visible />
         </section>
       </section>
     </section>

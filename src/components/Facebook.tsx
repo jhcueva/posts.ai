@@ -1,6 +1,6 @@
 function FacebookCard() {
   return (
-    <article class="flex h-screen w-screen items-center justify-center bg-gray-50 p-8 dark:bg-gray-900">
+    <article class="flex items-center justify-center bg-gray-50 p-8 dark:bg-gray-900">
       <div class="max-w-lg rounded-lg bg-white px-5 py-4 shadow dark:bg-gray-800">
         <section class="mb-4 flex">
           <img
@@ -30,7 +30,7 @@ function FacebookCard() {
             <svg
               class="z-20 h-6 w-6 rounded-full bg-white p-0.5 dark:bg-gray-800 "
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 16 16"
             >
               <defs>
@@ -75,8 +75,8 @@ function FacebookCard() {
                 />
               </defs>
               <g fill="none">
-                <use fill="url(#a1)" xlink:href="#b1" />
-                <use fill="black" filter="url(#c1)" xlink:href="#b1" />
+                <use fill="url(#a1)" xlinkHref="#b1" />
+                <use fill="black" filter="url(#c1)" xlinkHref="#b1" />
                 <path
                   fill="white"
                   d="M12.162 7.338c.176.123.338.245.338.674 0 .43-.229.604-.474.725a.73.73 0 01.089.546c-.077.344-.392.611-.672.69.121.194.159.385.015.62-.185.295-.346.407-1.058.407H7.5c-.988 0-1.5-.546-1.5-1V7.665c0-1.23 1.467-2.275 1.467-3.13L7.361 3.47c-.005-.065.008-.224.058-.27.08-.079.301-.2.635-.2.218 0 .363.041.534.123.581.277.732.978.732 1.542 0 .271-.414 1.083-.47 1.364 0 0 .867-.192 1.879-.199 1.061-.006 1.749.19 1.749.842 0 .261-.219.523-.316.666zM3.6 7h.8a.6.6 0 01.6.6v3.8a.6.6 0 01-.6.6h-.8a.6.6 0 01-.6-.6V7.6a.6.6 0 01.6-.6z"
