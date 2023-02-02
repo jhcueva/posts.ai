@@ -87,6 +87,34 @@ export async function createBodyParagraph(input) {
   }).then((res) => res.json());
 
   const { text } = response.generations[0];
-  console.log(text);
-  return text;
+  return text.trim();
+}
+
+export async function createTitle(input) {
+  const data = {
+    model: "command-xlarge-nightly",
+    prompt: `Generate me a title for a post with the keywords "${input}"`,
+    max_tokens: 18,
+    temperature: 0.9,
+    k: 0,
+    p: 0.75,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+    stop_sequences: [],
+    return_likelihoods: "GENERATION",
+  };
+  
+  const response = await fetch(COHERE_API_GENERATE_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `BEARER ${COHERE_API_KEY}`,
+      "Content-Type": "application/json",
+      "Cohere-Version": "2022-12-06",
+    },
+    body: JSON.stringify(data)
+  }).then((res) => res.json())
+
+  const { text } = response.generations[0]
+  const firstTitle = text.split("\n")
+  return firstTitle[1].trim()
 }

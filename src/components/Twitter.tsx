@@ -1,8 +1,9 @@
 import { useStore } from "@nanostores/preact";
-import { isLoading, apiBodyParagraphResponse } from "./store";
+import { isLoading, apiBodyParagraphResponse, apiTitleParagraphResponse } from "./store";
 
 function TwitterCard() {
   const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
+  const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse)
   const $isLoading = useStore(isLoading);
 
   return (
@@ -54,6 +55,9 @@ function TwitterCard() {
           !$isLoading && ($apiBodyParagraphResponse.length > 2)
             ?
             <>
+              <p class="mt-3 block whitespace-pre-line text-xl leading-snug text-black dark:text-white">
+                {$apiTitleParagraphResponse}
+              </p>
               <p class="mt-3 block whitespace-pre-line text-xl leading-snug text-black dark:text-white">
                 {$apiBodyParagraphResponse}
               </p>
