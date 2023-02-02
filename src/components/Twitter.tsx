@@ -7,7 +7,7 @@ function TwitterCard() {
 
   return (
     <section class="flex items-center justify-center lg:py-0">
-      <article class="max-w-2xl rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-800">
+      <article class="max-w-lg rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-800">
         <div class="flex justify-between">
           <div class="flex items-center">
             <img
