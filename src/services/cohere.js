@@ -116,5 +116,5 @@ export async function createTitle(input) {
 
   const { text } = response.generations[0]
   const firstTitle = text.split("\n")
-  return firstTitle[1].trim()
+  return firstTitle[1]?.trim() || ''
 }
