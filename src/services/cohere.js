@@ -103,7 +103,7 @@ export async function createTitle(input) {
     stop_sequences: [],
     return_likelihoods: "GENERATION",
   };
-  
+
   const response = await fetch(COHERE_API_GENERATE_URL, {
     method: "POST",
     headers: {
@@ -111,10 +111,10 @@ export async function createTitle(input) {
       "Content-Type": "application/json",
       "Cohere-Version": "2022-12-06",
     },
-    body: JSON.stringify(data)
-  }).then((res) => res.json())
+    body: JSON.stringify(data),
+  }).then((res) => res.json());
 
-  const { text } = response.generations[0]
-  const firstTitle = text.split("\n")
-  return firstTitle[1]?.trim() || ''
+  const { text } = response.generations[0];
+  const firstTitle = text.split("\n");
+  return firstTitle[1]?.trim() || "";
 }

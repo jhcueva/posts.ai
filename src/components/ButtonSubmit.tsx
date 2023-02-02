@@ -1,6 +1,11 @@
 import { useStore } from "@nanostores/preact";
 import { createBodyParagraph, createTitle } from "../services/cohere.js";
-import { apiBodyParagraphResponse, isLoading, isEnglish, apiTitleParagraphResponse } from "./store";
+import {
+  apiBodyParagraphResponse,
+  isLoading,
+  isEnglish,
+  apiTitleParagraphResponse,
+} from "./store";
 
 let promiseBody = null;
 let promiseTitle = null;
@@ -11,9 +16,9 @@ function SubmitButton() {
   const handleClick = async () => {
     const text = document.getElementById("textArea").value;
     promiseBody = createBodyParagraph(text);
-    promiseTitle = createTitle(text)
+    promiseTitle = createTitle(text);
     isLoading.set(true);
-    apiTitleParagraphResponse.set(await promiseTitle)
+    apiTitleParagraphResponse.set(await promiseTitle);
     apiBodyParagraphResponse.set(await promiseBody);
     isLoading.set(false);
   };
