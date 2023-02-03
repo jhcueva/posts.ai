@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/preact";
+import { Icons } from "./Icons";
 import {
   isLoading,
   apiBodyParagraphResponse,
@@ -45,22 +46,7 @@ function TwitterCard() {
         ) : null}
         {$isLoading ? (
           <section role="status" class="mt-3 flex items-center justify-center">
-            <svg
-              aria-hidden="true"
-              class="mr-2 h-8 w-8 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
-              viewBox="0 0 100 101"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                fill="currentColor"
-              />
-              <path
-                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                fill="currentFill"
-              />
-            </svg>
+            <Icons.spinnerTwitter />
             <span class="sr-only">Loading...</span>
           </section>
         ) : null}
@@ -74,25 +60,7 @@ function TwitterCard() {
               }
               class="absolute top-0 right-0 rounded-md p-2 transition delay-150 duration-150 ease-in-out hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
             >
-              <svg
-                aria-hidden="true"
-                height="16"
-                viewBox="0 0 16 16"
-                version="1.1"
-                width="16"
-                fill="currentColor"
-                data-view-component="true"
-                class="octicon octicon-copy"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
-                ></path>
-                <path
-                  fill-rule="evenodd"
-                  d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
-                ></path>
-              </svg>
+              <Icons.clipboard />
             </button>
             <p class="mt-3 block whitespace-pre-line pr-8 text-xl leading-snug text-black dark:text-white">
               {$apiTitleParagraphResponse}
@@ -101,10 +69,10 @@ function TwitterCard() {
             <p class="mt-3 block whitespace-pre-line text-xl leading-snug text-black dark:text-white">
               {$apiBodyParagraphResponse}
             </p>
-            <img
+            {/* <img
               class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700"
               src="https://pbs.twimg.com/media/EpkuplDXEAEjbFc?format=jpg&name=medium"
-            />
+            /> */}
           </section>
         ) : null}
 
@@ -114,19 +82,11 @@ function TwitterCard() {
         <div class="my-1 border border-b-0 border-gray-200 dark:border-gray-600"></div>
         <div class="mt-3 flex text-gray-500 dark:text-gray-400">
           <div class="mr-6 flex items-center">
-            <svg class="h-5 w-auto fill-current" viewBox="0 0 24 24" style="">
-              <g>
-                <path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
-              </g>
-            </svg>
+            <Icons.twitterLike />
             <span class="ml-3">615</span>
           </div>
           <div class="mr-6 flex items-center">
-            <svg class="h-5 w-auto fill-current" viewBox="0 0 24 24">
-              <g>
-                <path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
-              </g>
-            </svg>
+            <Icons.twitterComment />
             <span class="ml-3">93 people are Tweeting about this</span>
           </div>
         </div>
