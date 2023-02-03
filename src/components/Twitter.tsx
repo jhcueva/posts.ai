@@ -1,5 +1,6 @@
 import { useStore } from "@nanostores/preact";
 import { Icons } from "./Icons";
+import WelcomeMessage from "./WelcomeMessage";
 import {
   isLoading,
   apiBodyParagraphResponse,
@@ -39,11 +40,11 @@ function TwitterCard() {
           </svg>
         </div>
 
-        {!$isLoading && $apiBodyParagraphResponse.length < 2 ? (
-          <p class="mt-3 block whitespace-pre-line text-xl leading-snug text-black dark:text-white">
-            Here will appear your response
-          </p>
-        ) : null}
+        {
+          !$isLoading && $apiBodyParagraphResponse.length < 2
+            ? <WelcomeMessage styles={"mt-3 text-black dark:text-white"} />
+            : null
+        }
         {$isLoading ? (
           <section role="status" class="mt-3 flex items-center justify-center">
             <Icons.spinnerTwitter />

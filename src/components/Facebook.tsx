@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/preact";
+import WelcomeMessage from "./WelcomeMessage";
 import { Icons } from "./Icons";
 import {
   isLoading,
@@ -28,11 +29,11 @@ function FacebookCard() {
             </span>
           </section>
         </section>
-        {!$isLoading && $apiBodyParagraphResponse.length < 2 ? (
-          <p class="text-xl leading-snug text-gray-800 dark:text-gray-100 md:leading-normal">
-            Here will appear your response
-          </p>
-        ) : null}
+        {
+          !$isLoading && $apiBodyParagraphResponse.length < 2
+            ? <WelcomeMessage styles={"text-gray-800 dark:text-gray-100 md:leading-normal"} />
+            : null
+        }
         {$isLoading ? (
           <section role="status" class="mt-3 flex items-center justify-center">
             <Icons.spinner />

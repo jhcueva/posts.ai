@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/preact";
+import WelcomeMessage from "./WelcomeMessage";
 import { Icons } from "./Icons";
 import {
   isLoading,
@@ -33,11 +34,11 @@ function LinkedInCard() {
             </div>
           </div>
         </div>
-        {!$isLoading && $apiBodyParagraphResponse.length < 2 ? (
-          <p class="mt-3 block whitespace-pre-line text-xl leading-snug text-black dark:text-white">
-            Here will appear your response
-          </p>
-        ) : null}
+        {
+          !$isLoading && $apiBodyParagraphResponse.length < 2
+            ? <WelcomeMessage styles={"mt-3 text-black dark:text-white"} />
+            : null
+        }
         {$isLoading ? (
           <section role="status" class="mt-3 flex items-center justify-center">
             <Icons.spinner />
