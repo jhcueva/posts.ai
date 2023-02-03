@@ -13,7 +13,7 @@ function LinkedInCard() {
 
   return (
     <section class="flex items-center justify-center">
-      <article class="max-w-lg rounded-lg border bg-white px-4 py-3 shadow-sm dark:border-gray-800 dark:bg-gray-800">
+      <article class="max-w-lg rounded-lg w-[420.19px] border bg-white px-4 py-3 shadow-sm dark:border-gray-800 dark:bg-gray-800">
         <div class="flex items-center">
           <img
             class="h-12 w-12 rounded-full"

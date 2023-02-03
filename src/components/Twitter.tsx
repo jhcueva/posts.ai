@@ -80,7 +80,7 @@ function TwitterCard() {
           10:05 AM · Dec 19, 2020
         </p>
         <div class="my-1 border border-b-0 border-gray-200 dark:border-gray-600"></div>
-        <div class="mt-3 flex text-gray-500 dark:text-gray-400">
+        <div class="mt-3 flex text-gray-500 dark:text-gray-400 text-base">
           <div class="mr-6 flex items-center">
             <Icons.twitterLike />
             <span class="ml-3">615</span>

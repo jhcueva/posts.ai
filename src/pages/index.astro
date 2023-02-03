@@ -12,18 +12,19 @@ import SocialNetworkCard from "../components/SocialNetworkCard";
   <main class="min-h-screen dark:bg-slate-900">
     <section class="container m-auto max-w-7xl">
       <Header />
-      <h1 class="my-6 text-center text-5xl font-semibold dark:text-white">
-        Say ‘goodbye’ to the blank page for good
+      <h1
+        class="m-auto my-6 mb-12 max-w-[22ch] text-center text-5xl font-semibold leading-tight text-[#160647] dark:text-white md:text-6xl"
+      >
+        Time to say <span>‘goodbye’</span> to the blank posts
       </h1>
 
-      <section class="grid grid-cols-12">
-        <section class="col-span-12 lg:col-span-6">
-          <ErrorMessage client:load />
+      <section class="grid grid-cols-12 gap-8">
+        <section class="col-span-12">
           <TextArea client:visible />
-          <SubmitButton client:visible />
         </section>
-        <section class="col-span-12 lg:col-span-6">
-          <!-- <TwitterCard client:visible /> -->
+        <section
+          class="col-span-12 flex flex-col items-center justify-center gap-6 md:flex-row"
+        >
           <SocialNetworkCard client:visible />
           <SocialNetworkSelector client:visible />
         </section>

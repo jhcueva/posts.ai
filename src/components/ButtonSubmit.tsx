@@ -6,6 +6,7 @@ import {
   isEnglish,
   apiTitleParagraphResponse,
 } from "./store";
+import { Icons } from "./Icons.js";
 
 let promiseBody = null;
 let promiseTitle = null;
@@ -25,11 +26,11 @@ function SubmitButton() {
 
   return (
     <button
-      class="dark:focus: my-2 rounded-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 px-5 py-2.5 text-center text-sm font-medium text-white ring-blue-800 hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-blue-300"
+      class="absolute p-1 rounded-md text-gray-500 bottom-1.5 right-1 md:bottom-2.5 md:right-2 hover:bg-gray-100 dark:hover:text-gray-400 dark:hover:bg-gray-900 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent transition delay-150 duration-150 ease-in-out"
       onClick={handleClick}
       disabled={!$isEnglish}
     >
-      Submit
+      <Icons.sentIcon />
     </button>
   );
 }

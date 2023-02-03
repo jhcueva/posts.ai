@@ -8,7 +8,7 @@ function SocialNetworkSelector() {
     console.log(name);
   };
   return (
-    <ul class="flex w-14 flex-col items-center justify-center gap-6 rounded-t-full rounded-b-full  bg-slate-300 pt-4 pb-4 dark:bg-slate-800">
+    <ul class="flex w-56 h-14 md:w-14 md:h-56 md:flex-col items-center justify-center gap-6 rounded-t-full rounded-b-full bg-slate-200 pt-4 pb-4 dark:bg-slate-800">
       <li class="rounded-full p-1">
         <input
           onChange={() => handleClick("twitter")}
