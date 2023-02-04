@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TextArea from "../components/TextArea";
-import ErrorMessage from "../components/ErrorMessage";
-import SubmitButton from "../components/ButtonSubmit";
 import Header from "../components/Header";
 import SocialNetworkSelector from "../components/SocialNetworkSelector";
 import SocialNetworkCard from "../components/SocialNetworkCard";
@@ -11,12 +9,7 @@ import SocialNetworkCard from "../components/SocialNetworkCard";
 <Layout title="Welcome to Astro.">
   <main class="min-h-screen dark:bg-slate-900">
     <section class="container m-auto max-w-7xl">
-      <Header />
-      <h1
-        class="m-auto my-6 mb-12 max-w-[22ch] text-center text-5xl font-semibold leading-tight text-[#160647] dark:text-white md:text-6xl"
-      >
-        Time to say <span>‘goodbye’</span> to the blank posts
-      </h1>
+      <Header client:visible />
 
       <section class="grid grid-cols-12 gap-8">
         <section class="col-span-12">

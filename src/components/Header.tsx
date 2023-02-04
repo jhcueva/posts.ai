@@ -1,25 +1,23 @@
 import useDarkMode from "../hooks/useDarkMode";
+import { Icons } from "./Icons";
 
 function Header() {
-  const { colorTheme, $isDarkMode } = useDarkMode();
+  const { colorTheme, setDarkMode } = useDarkMode();
+
+  const handleClick = () => {
+    setDarkMode(colorTheme)
+  }
 
   return (
-    <header>
-      <input type="checkbox" id="toggle" class="hidden" />
-
-      <label
-        class="toggle relative flex h-16 w-32 cursor-pointer justify-between"
-        for="toggle"
-      >
-        <i class="bx bxs-sun"></i>
-        <i class="bx bx-moon"></i>
-        <span class="ball absolute aspect-square w-10 rounded-full"></span>
-      </label>
-      {colorTheme === "dark" ? (
-        <span class="dark:text-white">Is dark</span>
-      ) : (
-        <span class="dark:text-white">Not dark</span>
-      )}
+    <header class="relative">
+      <h1 class="m-auto py-6 mb-12 max-w-[22ch] text-center text-5xl font-semibold leading-tight text-[#160647] dark:text-white md:text-6xl">
+        Time to say <span>‘goodbye’</span> to the blank posts
+      </h1>
+      {
+        colorTheme === "dark"
+          ? <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-2 absolute top-4 right-4 rounded-md dark:text-white" onClick={handleClick}> <Icons.lightmode /> </button>
+          : <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-2 absolute top-4 right-4 rounded-md dark:text-white" onClick={handleClick}> <Icons.darkmode /> </button>
+      }
     </header>
   );
 }
