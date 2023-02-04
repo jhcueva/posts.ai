@@ -14,7 +14,7 @@ function FacebookCard() {
 
   return (
     <article class="flex items-center justify-center">
-      <div class="max-w-xl rounded-lg bg-white px-5 w-[420.19px] py-4 shadow dark:bg-gray-800">
+      <div class="max-w-xl rounded-lg bg-white px-5 md:w-[512px] py-4 shadow dark:bg-gray-800">
         <section class="mb-4 flex">
           <img
             class="h-12 w-12 rounded-full"
