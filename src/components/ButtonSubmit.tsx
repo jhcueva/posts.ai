@@ -5,6 +5,7 @@ import {
   isLoading,
   isEnglish,
   apiTitleParagraphResponse,
+  postDate,
 } from "./store";
 import { Icons } from "./Icons.js";
 
@@ -22,6 +23,7 @@ function SubmitButton({ isEmpty }) {
     apiTitleParagraphResponse.set(await promiseTitle);
     apiBodyParagraphResponse.set(await promiseBody);
     isLoading.set(false);
+    postDate.set(new Date())
   };
 
   return (

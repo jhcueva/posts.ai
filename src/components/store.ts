@@ -6,3 +6,4 @@ export const apiBodyParagraphResponse = atom("");
 export const apiTitleParagraphResponse = atom("");
 export const isLoading = atom(false);
 export const socialNetwork = atom("twitter");
+export const postDate = atom(new Date());

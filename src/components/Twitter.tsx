@@ -5,12 +5,16 @@ import {
   isLoading,
   apiBodyParagraphResponse,
   apiTitleParagraphResponse,
+  postDate,
 } from "./store";
 
 function TwitterCard() {
   const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
   const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse);
   const $isLoading = useStore(isLoading);
+  const $postDate = useStore(postDate)
+
+  console.log($postDate)
 
   return (
     <section class="flex items-center justify-center lg:py-0">
@@ -70,15 +74,11 @@ function TwitterCard() {
             <p class="mt-3 block whitespace-pre-line text-xl leading-snug text-black dark:text-white">
               {$apiBodyParagraphResponse}
             </p>
-            {/* <img
-              class="mt-2 rounded-2xl border border-gray-100 dark:border-gray-700"
-              src="https://pbs.twimg.com/media/EpkuplDXEAEjbFc?format=jpg&name=medium"
-            /> */}
           </section>
         ) : null}
 
-        <p class="my-0.5 py-1 text-base text-gray-500 dark:text-gray-400">
-          10:05 AM · Dec 19, 2020
+        <p class="my-0.5 py-1 text-sm text-gray-500 dark:text-gray-400">
+          {$postDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} · {$postDate.toLocaleString('default', { month: 'long' }).slice(0, 3)} {$postDate.getDate()}, {$postDate.getFullYear()}
         </p>
         <div class="my-1 border border-b-0 border-gray-200 dark:border-gray-600"></div>
         <div class="mt-3 flex text-gray-500 dark:text-gray-400 text-base">

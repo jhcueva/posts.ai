@@ -5,12 +5,14 @@ import {
   isLoading,
   apiBodyParagraphResponse,
   apiTitleParagraphResponse,
+  postDate,
 } from "./store";
 
 function FacebookCard() {
   const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
   const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse);
   const $isLoading = useStore(isLoading);
+  const $postDate = useStore(postDate)
 
   return (
     <article class="flex items-center justify-center">
@@ -25,7 +27,7 @@ function FacebookCard() {
               Loyce Kuvalis
             </span>
             <span class="block text-sm font-light leading-snug text-gray-500 dark:text-gray-400">
-              16 December at 08:25
+              {$postDate.getDate()} {$postDate.toLocaleString('default', { month: 'long' })} at {$postDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false })}
             </span>
           </section>
         </section>
