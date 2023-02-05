@@ -14,8 +14,6 @@ function TwitterCard({ user }) {
   const $isLoading = useStore(isLoading);
   const $postDate = useStore(postDate)
 
-  console.log($postDate)
-
   return (
     <section class="flex items-center justify-center lg:py-0">
       <article class="max-w-lg rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-800">

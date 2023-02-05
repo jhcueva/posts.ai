@@ -36,7 +36,7 @@ function SocialNetworkSelector() {
         />
         <label
           for="facebook"
-          class="cursor-pointer rounded-lg hover:bg-gray-100 hover:text-gray-600 peer-checked:text-blue-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:peer-checked:text-blue-500"
+          class="cursor-pointer rounded-lg hover:bg-gray-100 hover:text-blue-600 peer-checked:text-blue-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-blue-600 dark:peer-checked:text-blue-500"
         >
           <Icons.facebook />
         </label>

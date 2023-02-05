@@ -11,8 +11,8 @@ function DarkModeToggle() {
     <>
       {
         colorTheme === "dark"
-          ? <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-3 rounded-md dark:text-white" onClick={handleClick}> <Icons.lightmode /> </button>
-          : <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-3 rounded-md dark:text-white" onClick={handleClick}> <Icons.darkmode /> </button>
+          ? <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-3 rounded-md dark:text-white" aria-label="lightMode" onClick={handleClick} > <Icons.lightmode /> </button>
+          : <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-3 rounded-md dark:text-white" aria-label="darkMode" onClick={handleClick}> <Icons.darkmode /> </button>
       }
     </>
   )
