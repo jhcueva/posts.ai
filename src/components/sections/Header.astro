@@ -1,0 +1,17 @@
+---
+import LoginGitHub from "../LoginGitHub";
+import DarkModeToggle from "../DarkModeToggle";
+---
+
+<header class="relative">
+  <section class="flex items-center justify-end gap-4 p-8">
+    <LoginGitHub client:visible />
+    <DarkModeToggle client:visible />
+  </section>
+
+  <h1
+    class="m-auto mb-8 max-w-[22ch] py-12 text-center text-5xl font-semibold leading-tight text-[#160647] dark:text-white md:text-6xl"
+  >
+    Time to say <span>‘goodbye’</span> to the blank posts
+  </h1>
+</header>

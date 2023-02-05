@@ -1,0 +1,17 @@
+---
+import TextArea from "../TextArea";
+import SocialNetworkCard from "../SocialNetworkCard";
+import SocialNetworkSelector from "../SocialNetworkSelector";
+---
+
+<section class="grid grid-cols-12 gap-8">
+  <section class="col-span-12">
+    <TextArea client:visible />
+  </section>
+  <section
+    class="col-span-12 flex flex-col items-center justify-center gap-6 md:flex-row"
+  >
+    <SocialNetworkCard client:visible />
+    <SocialNetworkSelector client:visible />
+  </section>
+</section>

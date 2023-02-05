@@ -5,7 +5,6 @@ import { Icons } from "./Icons";
 function SocialNetworkSelector() {
   const handleClick = (name: string) => {
     socialNetwork.set(name);
-    console.log(name);
   };
   return (
     <ul class="flex w-56 h-14 md:w-14 md:h-56 md:flex-col items-center justify-center gap-6 rounded-t-full rounded-b-full bg-slate-200 pt-4 pb-4 dark:bg-slate-800">

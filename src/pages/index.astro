@@ -1,27 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TextArea from "../components/TextArea";
-import Header from "../components/Header";
-import SocialNetworkSelector from "../components/SocialNetworkSelector";
-import SocialNetworkCard from "../components/SocialNetworkCard";
-import testUser from "../components/testUser";
+import Header from "../components/sections/Header.astro";
+import Content from "../components/sections/Content.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="min-h-screen dark:bg-slate-900">
     <section class="container m-auto max-w-7xl">
-      <Header client:visible />
-      <section class="grid grid-cols-12 gap-8">
-        <section class="col-span-12">
-          <TextArea client:visible />
-        </section>
-        <section
-          class="col-span-12 flex flex-col items-center justify-center gap-6 md:flex-row"
-        >
-          <SocialNetworkCard client:visible />
-          <SocialNetworkSelector client:visible />
-        </section>
-      </section>
+      <Header />
+      <Content />
     </section>
   </main>
 </Layout>
