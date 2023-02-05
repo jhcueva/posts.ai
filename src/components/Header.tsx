@@ -10,16 +10,18 @@ function Header() {
   }
   return (
     <header class="relative">
+      <section class="flex justify-end items-center gap-4 p-8">
+        <LoginGitHub />
+        {
+          colorTheme === "dark"
+            ? <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-3 rounded-md dark:text-white" onClick={handleClick}> <Icons.lightmode /> </button>
+            : <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-3 rounded-md dark:text-white" onClick={handleClick}> <Icons.darkmode /> </button>
+        }
+      </section>
 
-      <LoginGitHub />
-      <h1 class="m-auto py-6 mb-12 max-w-[22ch] text-center text-5xl font-semibold leading-tight text-[#160647] dark:text-white md:text-6xl">
+      <h1 class="m-auto py-12 mb-8 max-w-[22ch] text-center text-5xl font-semibold leading-tight text-[#160647] dark:text-white md:text-6xl">
         Time to say <span>‘goodbye’</span> to the blank posts
       </h1>
-      {
-        colorTheme === "dark"
-          ? <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-2 absolute top-4 right-4 rounded-md dark:text-white" onClick={handleClick}> <Icons.lightmode /> </button>
-          : <button class="dark:hover:bg-gray-700 hover:bg-gray-200 p-2 absolute top-4 right-4 rounded-md dark:text-white" onClick={handleClick}> <Icons.darkmode /> </button>
-      }
     </header>
   );
 }
