@@ -8,7 +8,7 @@ import {
   postDate,
 } from "./store";
 
-function TwitterCard() {
+function TwitterCard({ user }) {
   const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
   const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse);
   const $isLoading = useStore(isLoading);
@@ -22,15 +22,15 @@ function TwitterCard() {
         <div class="flex justify-between">
           <div class="flex items-center">
             <img
-              class="h-11 w-11 rounded-full"
-              src="https://pbs.twimg.com/profile_images/1287562748562309122/4RLk5A_U_x96.jpg"
+              class="h-11 w-11 rounded-full object-cover"
+              src={user ? user.avatar : "https://www.alphr.com/wp-content/uploads/2020/10/twitter.png"}
             />
             <div class="ml-1.5 text-sm leading-tight">
               <span class="block font-bold text-black dark:text-white ">
-                Visualize Value
+                {user ? user.name : "newUser"}
               </span>
               <span class="block font-normal text-gray-500 dark:text-gray-400">
-                @visualizevalue
+                {user ? `@${user.username}` : "@newUser"}
               </span>
             </div>
           </div>

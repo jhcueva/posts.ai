@@ -8,7 +8,7 @@ import {
   postDate,
 } from "./store";
 
-function FacebookCard() {
+function FacebookCard({ user }) {
   const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
   const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse);
   const $isLoading = useStore(isLoading);
@@ -19,12 +19,12 @@ function FacebookCard() {
       <div class="max-w-xl rounded-lg bg-white px-5 md:w-[512px] py-4 shadow dark:bg-gray-800">
         <section class="mb-4 flex">
           <img
-            class="h-12 w-12 rounded-full"
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            class="h-12 w-12 rounded-full object-cover"
+            src={user ? user.avatar : "https://user-images.githubusercontent.com/11250/39013954-f5091c3a-43e6-11e8-9cac-37cf8e8c8e4e.jpg"}
           />
           <section class="ml-2 mt-0.5">
             <span class="block text-base font-medium leading-snug text-black dark:text-gray-100">
-              Loyce Kuvalis
+              {user ? user.name : "newUser"}
             </span>
             <span class="block text-sm font-light leading-snug text-gray-500 dark:text-gray-400">
               {$postDate.getDate()} {$postDate.toLocaleString('default', { month: 'long' })} at {$postDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false })}

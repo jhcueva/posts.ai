@@ -10,9 +10,9 @@ function SocialNetworkCard() {
   const { user } = useUser()
   return (
     <>
-      {$socialNetwork === "twitter" ? <TwitterCard /> : null}
-      {$socialNetwork === "facebook" ? <FacebookCard /> : null}
-      {$socialNetwork === "linkedin" ? <LinkedInCard /> : null}
+      {$socialNetwork === "twitter" ? <TwitterCard user={user} /> : null}
+      {$socialNetwork === "facebook" ? <FacebookCard user={user} /> : null}
+      {$socialNetwork === "linkedin" ? <LinkedInCard user={user} /> : null}
     </>
   );
 }

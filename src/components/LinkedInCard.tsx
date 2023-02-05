@@ -7,7 +7,7 @@ import {
   apiTitleParagraphResponse,
 } from "./store";
 
-function LinkedInCard() {
+function LinkedInCard({ user }) {
   const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
   const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse);
   const $isLoading = useStore(isLoading);
@@ -17,12 +17,14 @@ function LinkedInCard() {
       <article class="max-w-lg rounded-lg md:w-[512px] border bg-white px-4 py-3 shadow-sm dark:border-gray-800 dark:bg-gray-800">
         <div class="flex items-center">
           <img
-            class="h-12 w-12 rounded-full"
-            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            class="h-12 w-12 rounded-full object-cover"
+            src={user ? user.avatar : "https://user-images.githubusercontent.com/11250/39013954-f5091c3a-43e6-11e8-9cac-37cf8e8c8e4e.jpg"}
           />
           <div class="ml-2">
             <div class="text-sm ">
-              <span class="font-semibold dark:text-white">Dallin Baumbach</span>
+              <span class="font-semibold dark:text-white">
+                {user ? user.name : "newUser"}
+              </span>
               <span class="text-gray-500 dark:text-white"> • 1st</span>
             </div>
             <div class="text-xs text-gray-500 dark:text-white">
