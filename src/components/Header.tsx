@@ -1,5 +1,6 @@
 import useDarkMode from "../hooks/useDarkMode";
 import { Icons } from "./Icons";
+import LoginGitHub from "./LoginGitHub";
 
 function Header() {
   const { colorTheme, setDarkMode } = useDarkMode();
@@ -7,9 +8,10 @@ function Header() {
   const handleClick = () => {
     setDarkMode(colorTheme)
   }
-
   return (
     <header class="relative">
+
+      <LoginGitHub />
       <h1 class="m-auto py-6 mb-12 max-w-[22ch] text-center text-5xl font-semibold leading-tight text-[#160647] dark:text-white md:text-6xl">
         Time to say <span>‘goodbye’</span> to the blank posts
       </h1>

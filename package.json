@@ -14,6 +14,7 @@
     "@astrojs/preact": "^0.2.0",
     "@astrojs/tailwind": "^3.0.0",
     "@nanostores/preact": "^0.3.1",
+    "@supabase/supabase-js": "^2.7.0",
     "astro": "^2.0.1",
     "nanostores": "^0.7.1",
     "preact": "^10.11.3",
