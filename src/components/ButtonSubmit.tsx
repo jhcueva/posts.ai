@@ -16,7 +16,7 @@ function SubmitButton({ isEmpty }) {
   const $isEnglish = useStore(isEnglish);
 
   const handleClick = async () => {
-    const text = document.getElementById("textArea").value;
+    const text = (document.getElementById("textArea") as HTMLInputElement).value;
     promiseBody = createBodyParagraph(text);
     promiseTitle = createTitle(text);
     isLoading.set(true);
