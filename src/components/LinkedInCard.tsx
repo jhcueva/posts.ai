@@ -1,6 +1,7 @@
 import { useStore } from "@nanostores/preact";
 import WelcomeMessage from "./WelcomeMessage";
 import { Icons } from "./Icons";
+import CopyToClipboard from "./CopyToClipboard";
 import {
   isLoading,
   apiBodyParagraphResponse,
@@ -49,16 +50,7 @@ function LinkedInCard({ user }) {
         ) : null}
         {!$isLoading && $apiBodyParagraphResponse.length > 2 ? (
           <section class="relative">
-            <button
-              onClick={() =>
-                navigator.clipboard.writeText(
-                  `${$apiTitleParagraphResponse} \n${$apiBodyParagraphResponse}`
-                )
-              }
-              class="absolute top-0 right-0 rounded-md p-2 transition delay-150 duration-150 ease-in-out hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
-            >
-              <Icons.clipboard />
-            </button>
+            <CopyToClipboard titleParagraph={$apiTitleParagraphResponse} bodyParagraph={$apiBodyParagraphResponse} />
             <p class="mt-3 block whitespace-pre-line pr-8 text-xl leading-snug text-black dark:text-white">
               {$apiTitleParagraphResponse}
             </p>
