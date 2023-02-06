@@ -12,7 +12,7 @@ import { Icons } from "./Icons.js";
 let promiseBody = null;
 let promiseTitle = null;
 
-function SubmitButton({ isEmpty }) {
+function SubmitButton({ submit }) {
   const $isEnglish = useStore(isEnglish);
 
   const handleClick = async () => {
@@ -22,8 +22,8 @@ function SubmitButton({ isEmpty }) {
     isLoading.set(true);
     apiTitleParagraphResponse.set(await promiseTitle);
     apiBodyParagraphResponse.set(await promiseBody);
-    isLoading.set(false);
     postDate.set(new Date())
+    isLoading.set(false);
   };
 
   return (
