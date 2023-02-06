@@ -5,7 +5,7 @@ import CopyToClipboard from "./CopyToClipboard";
 function FacebookCard({ user, title, body, date, isLoading }) {
   return (
     <article class="flex items-center justify-center">
-      <div class="max-w-xl rounded-lg bg-white px-5 md:w-[425.67px] py-4 shadow dark:bg-gray-800">
+      <div class="max-w-xl rounded-lg bg-white px-5 md:min-w-[425.67px] py-4 shadow dark:bg-gray-800">
         <section class="mb-4 flex">
           <img
             class="h-12 w-12 rounded-full object-cover"
@@ -13,7 +13,7 @@ function FacebookCard({ user, title, body, date, isLoading }) {
           />
           <section class="ml-2 mt-0.5">
             <span class="block text-base font-medium leading-snug text-black dark:text-gray-100">
-              {user ? user.name : "newUser"}
+              {user ? user.name : "Eric Mc."}
             </span>
             <span class="block text-sm font-light leading-snug text-gray-500 dark:text-gray-400">
               {date.getDate()} {date.toLocaleString('default', { month: 'long' })} at {date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false })}

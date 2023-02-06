@@ -14,10 +14,10 @@ function TwitterCard({ user, title, body, date, isLoading }) {
             />
             <div class="ml-1.5 text-sm leading-tight">
               <span class="block font-bold text-black dark:text-white ">
-                {user ? user.name : "newUser"}
+                {user ? user.name : "Eric Mc."}
               </span>
               <span class="block font-normal text-gray-500 dark:text-gray-400">
-                {user ? `@${user.username}` : "@newUser"}
+                {user ? `@${user.username}` : "@ericmc"}
               </span>
             </div>
           </div>

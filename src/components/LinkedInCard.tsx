@@ -5,7 +5,7 @@ import CopyToClipboard from "./CopyToClipboard";
 function LinkedInCard({ user, title, body, date, isLoading }) {
   return (
     <section class="flex items-center justify-center">
-      <article class="max-w-lg rounded-lg md:w-[425.67px] border bg-white px-4 py-3 shadow-sm dark:border-gray-800 dark:bg-gray-800">
+      <article class="max-w-lg rounded-lg md:min-w-[425.67px] border bg-white px-4 py-3 shadow-sm dark:border-gray-800 dark:bg-gray-800">
         <div class="flex items-center">
           <img
             class="h-12 w-12 rounded-full object-cover"
@@ -14,7 +14,7 @@ function LinkedInCard({ user, title, body, date, isLoading }) {
           <div class="ml-2">
             <div class="text-sm ">
               <span class="font-semibold dark:text-white">
-                {user ? user.name : "newUser"}
+                {user ? user.name : "Eric Mc."}
               </span>
               <span class="text-gray-500 dark:text-white"> • 1st</span>
             </div>
@@ -22,7 +22,7 @@ function LinkedInCard({ user, title, body, date, isLoading }) {
               Software Engineer at Tesla, Inc
             </div>
             <div class="flex text-xs text-gray-500 dark:text-white">
-              <span class="inline-block">3d • Edited • </span>
+              <span class="inline-block">3s • Edited • </span>
               <Icons.linkedinWorld />
             </div>
           </div>
