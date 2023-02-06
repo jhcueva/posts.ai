@@ -1,8 +1,10 @@
 # Welcome to [posts.ai](https://hackathon-ten-omega.vercel.app)
 
-Are you looking for a way to create social media posts in seconds? Look no further! Our app is the perfect solution.
-You can easily create social media posts writing on the prompt the topic, press enter and in few seconds you'll get your answer.  
-Start creating social media posts today with our app!
+Are you looking for a way to create social media posts in seconds? <br /> Look no further! Our app is the perfect solution.
+You can easily create social media posts writing on the prompt the topic, press enter and in few seconds you'll get your answer. Start creating social media posts today with our app!
+
+![presentation](https://user-images.githubusercontent.com/15198470/217093803-038ed0c4-7b2a-4344-90b8-f599155600f6.gif)
+
 
 ## 🛠️ Installation steps
 
