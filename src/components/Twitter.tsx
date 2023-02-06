@@ -1,34 +1,8 @@
-import { useStore } from "@nanostores/preact";
 import { Icons } from "./Icons";
 import WelcomeMessage from "./WelcomeMessage";
 import CopyToClipboard from "./CopyToClipboard";
-import {
-  isLoading,
-  apiBodyParagraphResponse,
-  apiTitleParagraphResponse,
-  postDate,
-} from "./store";
 
-function TwitterCard({ user }) {
-  const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
-  const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse);
-  const $isLoading = useStore(isLoading);
-  const $postDate = useStore(postDate)
-
-  const handleClick = () => {
-    navigator.clipboard.writeText(`${$apiTitleParagraphResponse} \n${$apiBodyParagraphResponse}`)
-    import('https://cdn.skypack.dev/wc-toast')
-      .then(({ toast }) => toast('Copied to clipboard', {
-        duration: 2000,
-        icon: {
-          type: 'success'
-        },
-        theme: {
-          type: 'dark'
-        }
-      }))
-  }
-
+function TwitterCard({ user, title, body, date, isLoading }) {
   return (
     <section class="flex items-center justify-center lg:py-0">
       <article class="max-w-lg rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-800">
@@ -58,31 +32,31 @@ function TwitterCard({ user }) {
         </div>
 
         {
-          !$isLoading && $apiBodyParagraphResponse.length < 2
+          !isLoading && body.length < 2
             ? <WelcomeMessage styles={"mt-3 text-black dark:text-white"} />
             : null
         }
-        {$isLoading ? (
+        {isLoading ? (
           <section role="status" class="mt-3 flex items-center justify-center">
             <Icons.spinnerTwitter />
             <span class="sr-only">Loading...</span>
           </section>
         ) : null}
-        {!$isLoading && $apiBodyParagraphResponse.length > 2 ? (
+        {!isLoading && body.length > 2 ? (
           <section class="relative">
-            <CopyToClipboard titleParagraph={$apiBodyParagraphResponse} bodyParagraph={$apiBodyParagraphResponse} />
+            <CopyToClipboard titleParagraph={title} bodyParagraph={body} />
             <p class="mt-3 block whitespace-pre-line pr-8 text-xl leading-snug text-black dark:text-white">
-              {$apiTitleParagraphResponse}
+              {title}
             </p>
 
             <p class="mt-3 block whitespace-pre-line text-xl leading-snug text-black dark:text-white">
-              {$apiBodyParagraphResponse}
+              {body}
             </p>
           </section>
         ) : null}
 
         <p class="my-0.5 py-1 text-sm text-gray-500 dark:text-gray-400">
-          {$postDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} · {$postDate.toLocaleString('default', { month: 'long' }).slice(0, 3)} {$postDate.getDate()}, {$postDate.getFullYear()}
+          {date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })} · {date.toLocaleString('default', { month: 'long' }).slice(0, 3)} {date.getDate()}, {date.getFullYear()}
         </p>
         <div class="my-1 border border-b-0 border-gray-200 dark:border-gray-600"></div>
         <div class="mt-3 flex text-gray-500 dark:text-gray-400 text-base">

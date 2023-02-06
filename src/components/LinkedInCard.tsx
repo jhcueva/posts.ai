@@ -1,18 +1,8 @@
-import { useStore } from "@nanostores/preact";
 import WelcomeMessage from "./WelcomeMessage";
 import { Icons } from "./Icons";
 import CopyToClipboard from "./CopyToClipboard";
-import {
-  isLoading,
-  apiBodyParagraphResponse,
-  apiTitleParagraphResponse,
-} from "./store";
 
-function LinkedInCard({ user }) {
-  const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
-  const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse);
-  const $isLoading = useStore(isLoading);
-
+function LinkedInCard({ user, title, body, date, isLoading }) {
   return (
     <section class="flex items-center justify-center">
       <article class="max-w-lg rounded-lg md:w-[425.67px] border bg-white px-4 py-3 shadow-sm dark:border-gray-800 dark:bg-gray-800">
@@ -38,24 +28,24 @@ function LinkedInCard({ user }) {
           </div>
         </div>
         {
-          !$isLoading && $apiBodyParagraphResponse.length < 2
+          !isLoading && body.length < 2
             ? <WelcomeMessage styles={"mt-3 text-black dark:text-white"} />
             : null
         }
-        {$isLoading ? (
+        {isLoading ? (
           <section role="status" class="mt-3 flex items-center justify-center">
             <Icons.spinner />
             <span class="sr-only">Loading...</span>
           </section>
         ) : null}
-        {!$isLoading && $apiBodyParagraphResponse.length > 2 ? (
+        {!isLoading && body.length > 2 ? (
           <section class="relative">
-            <CopyToClipboard titleParagraph={$apiTitleParagraphResponse} bodyParagraph={$apiBodyParagraphResponse} />
+            <CopyToClipboard titleParagraph={title} bodyParagraph={body} />
             <p class="mt-3 block whitespace-pre-line pr-8 text-xl leading-snug text-black dark:text-white">
-              {$apiTitleParagraphResponse}
+              {title}
             </p>
             <p class="mt-3 block whitespace-pre-line pr-7 text-xl leading-snug text-black dark:text-white">
-              {$apiBodyParagraphResponse}
+              {body}
             </p>
           </section>
         ) : null}

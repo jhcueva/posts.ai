@@ -1,20 +1,8 @@
-import { useStore } from "@nanostores/preact";
 import WelcomeMessage from "./WelcomeMessage";
 import { Icons } from "./Icons";
 import CopyToClipboard from "./CopyToClipboard";
-import {
-  isLoading,
-  apiBodyParagraphResponse,
-  apiTitleParagraphResponse,
-  postDate,
-} from "./store";
 
-function FacebookCard({ user }) {
-  const $apiBodyParagraphResponse = useStore(apiBodyParagraphResponse);
-  const $apiTitleParagraphResponse = useStore(apiTitleParagraphResponse);
-  const $isLoading = useStore(isLoading);
-  const $postDate = useStore(postDate)
-
+function FacebookCard({ user, title, body, date, isLoading }) {
   return (
     <article class="flex items-center justify-center">
       <div class="max-w-xl rounded-lg bg-white px-5 md:w-[425.67px] py-4 shadow dark:bg-gray-800">
@@ -28,29 +16,29 @@ function FacebookCard({ user }) {
               {user ? user.name : "newUser"}
             </span>
             <span class="block text-sm font-light leading-snug text-gray-500 dark:text-gray-400">
-              {$postDate.getDate()} {$postDate.toLocaleString('default', { month: 'long' })} at {$postDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false })}
+              {date.getDate()} {date.toLocaleString('default', { month: 'long' })} at {date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false })}
             </span>
           </section>
         </section>
         {
-          !$isLoading && $apiBodyParagraphResponse.length < 2
+          !isLoading && body.length < 2
             ? <WelcomeMessage styles={"text-gray-800 dark:text-gray-100 md:leading-normal"} />
             : null
         }
-        {$isLoading ? (
+        {isLoading ? (
           <section role="status" class="mt-3 flex items-center justify-center">
             <Icons.spinner />
             <span class="sr-only">Loading...</span>
           </section>
         ) : null}
-        {!$isLoading && $apiBodyParagraphResponse.length > 2 ? (
+        {!isLoading && body.length > 2 ? (
           <section class="relative">
-            <CopyToClipboard titleParagraph={$apiTitleParagraphResponse} bodyParagraph={$apiBodyParagraphResponse} />
+            <CopyToClipboard titleParagraph={title} bodyParagraph={body} />
             <p class="whitespace-pre-line pr-8 text-xl leading-snug text-gray-800 dark:text-gray-100 md:leading-normal">
-              {$apiTitleParagraphResponse}
+              {title}
             </p>
             <p class="whitespace-pre-line pr-7 text-xl leading-snug text-gray-800 dark:text-gray-100 md:leading-normal">
-              {$apiBodyParagraphResponse}
+              {body}
             </p>
           </section>
         ) : null}
